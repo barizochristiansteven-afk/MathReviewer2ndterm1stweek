@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 Math Reviewer — Piecewise Functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Mathweek1Css.css">
+<script src="Mathweek1Js.js"></script>
+</head>
+<body>
+
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-fill" id="readingProgress"></div>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<div class="blob blob-1" aria-hidden="true"></div>
+<div class="blob blob-2" aria-hidden="true"></div>
+<div class="blob blob-3" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="eyebrow">General Mathematics &middot; Quarter 1 &middot; Week 1</div>
+    <h1>Piecewise Functions</h1>
+    <p class="tagline">One function. Several rules. A single answer.</p>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab is-active" data-tab="learn" role="tab">Study Notes</button>
+      <button class="tab" data-tab="quiz" role="tab">Practice Quiz</button>
+      <button class="tab" data-tab="cheat" role="tab">Formula Sheet</button>
+      <button class="tab" data-tab="glossary" role="tab">Glossary</button>
+      <button class="tab" data-tab="videos" role="tab">Video Lessons</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- STUDY NOTES -->
+  <section class="panel is-active" id="learn" role="tabpanel">
+
+    <div class="deck">
+      <div class="deck-progress">
+        <span class="deck-counter">Slide <span id="slideNum">1</span> of <span id="slideTotal">12</span></span>
+        <div class="deck-dots" id="deckDots"></div>
+      </div>
+
+      <div class="deck-stage" id="deckStage">
+
+        <!-- Slide 1: Intro letter -->
+        <article class="slide">
+          <div class="card intro-letter">
+            <div class="letter-stamp">Week 1</div>
+            <h2 class="letter-title">A short note before we begin</h2>
+
+            <p class="letter-greeting">Dear student,</p>
+
+            <p>
+              Welcome to Week 1 of General Mathematics. This is the week where you
+              meet one of the most quietly useful ideas in all of mathematics &mdash;
+              the <strong>piecewise function</strong>. It has a long name, but the
+              idea behind it is something you have already lived your whole life.
+            </p>
+
+            <p>
+              Think about the last time you rode a jeepney. You did not pay a random
+              amount. You paid a flat fare for the first few kilometres, and then a
+              small extra charge for each kilometre beyond that. The driver did not
+              do complicated math in his head. He simply knew two rules: one for
+              short rides, one for longer rides. Whichever rule matched your trip,
+              that was the price.
+            </p>
+
+            <p>
+              That is a piecewise function. It is one function, but it carries more
+              than one rule. The rule you use depends on the number you were given.
+              Nothing more, nothing less.
+            </p>
+
+            <p>
+              You will see the same idea everywhere once you start looking. Your
+              phone plan charges one rate for the first five gigabytes, and a higher
+              rate after that. Your electric bill climbs slowly at first, then faster
+              once you cross a certain number of kilowatt-hours. A parking garage
+              charges one rate for the first two hours, then a new rate after. Even
+              income tax is built from brackets &mdash; a chain of piecewise rules
+              stacked on top of each other.
+            </p>
+
+            <p>
+              Take your time. Read the examples slowly. Drag the slider. Test
+              yourself with the fifty questions and read the explanation after each
+              one, whether you got it right or wrong. By the time you finish,
+              piecewise functions will not feel like a new topic. They will feel
+              like a lens &mdash; a way of seeing the pricing rules that were always
+              quietly running in the background of your everyday life.
+            </p>
+
+            <p class="letter-sign">Let us begin.<br>&mdash; Your Week 1 reviewer</p>
+          </div>
+        </article>
+
+        <!-- Slide 2: What this week covers -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>What this week covers</h2>
+            <p>By the end of Week 1, you should be able to do three things:</p>
+            <ol class="steps">
+              <li>Illustrate a piecewise function in a real-life context, such as a fare rate, a purchase, or an income tax bracket.</li>
+              <li>Solve practical problems involving piecewise functions by choosing the right rule and computing carefully.</li>
+              <li>Explain, in your own words, why a single rule is not enough for the real world.</li>
+            </ol>
+            <div class="callout callout-violet">
+              <span class="callout-label">How to use this reviewer</span>
+              Move through the slides with the Next button, the arrow keys on your
+              keyboard, or by clicking the dots above. Every slide focuses on one
+              idea and shows several worked examples.
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3: What a piecewise function is -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>What a piecewise function actually is</h2>
+            <p>
+              A piecewise function is one function that behaves differently
+              depending on the input. Instead of a single rule that applies
+              everywhere, it carries a short list of rules, and each rule is
+              responsible for a specific range of values.
+            </p>
+            <div class="callout callout-violet">
+              <span class="callout-label">Everyday comparison</span>
+              A jeepney driver follows two rules. Ride 4&nbsp;km or less, and you
+              pay a flat fare. Ride farther, and the extra distance is added on top
+              of that same flat fare. Two rules, one total price &mdash; that is
+              piecewise.
+            </div>
+            <p>
+              What makes it useful is that the real world rarely charges a single
+              rate for everything. Water, electricity, parking, overtime, shipping,
+              taxes: all of them change their rate once you cross a threshold.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 4: Three-step method -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>The method that always works</h2>
+            <p>Every problem in this reviewer follows the same three moves.</p>
+            <ol class="steps">
+              <li>Read the value you were given.</li>
+              <li>Check the conditions one by one and find the one that is true.</li>
+              <li>Apply only that rule and compute carefully.</li>
+            </ol>
+            <div class="callout callout-amber">
+              <span class="callout-label">Common mistake</span>
+              Do not blend two rules together, and do not fall back to the rule
+              that looks easiest. The condition decides everything. If the number
+              does not satisfy a rule's condition, that rule is off the table.
+            </div>
+
+            <h3 class="sub">A tiny example to warm up</h3>
+            <p>Suppose a function says:</p>
+            <div class="formula formula-plain">
+              <div class="rule-row"><span class="val">p(x) = 5</span><span class="cond">if x &lt; 10</span></div>
+              <div class="rule-row"><span class="val">p(x) = 5 + 2(x &minus; 10)</span><span class="cond">if x &ge; 10</span></div>
+            </div>
+            <p><strong>p(3):</strong> 3 is less than 10, so use the first rule. p(3) = 5.</p>
+            <p><strong>p(10):</strong> The symbol is &ge;, which includes 10. p(10) = 5 + 2(0) = 5.</p>
+            <p><strong>p(13):</strong> p(13) = 5 + 2(3) = 11.</p>
+            <p>
+              Notice how p(10) gives the same answer under both rules. That is on
+              purpose &mdash; the two pieces were designed to meet at the boundary.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 5: Jeepney slider -->
+        <article class="slide">
+          <div class="card card-teal">
+            <h2>Try it: the jeepney fare</h2>
+            <p>
+              Move the slider to change the distance. Watch how the fare stays flat
+              until 4&nbsp;km, then starts climbing by 1.50 per kilometre.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">f(x) = 12</span><span class="cond">if 0 &lt; x &le; 4</span></div>
+                <div class="rule-row"><span class="val">f(x) = 12 + 1.5(x &minus; 4)</span><span class="cond">if x &gt; 4</span></div>
+              </div>
+            </div>
+
+            <div class="demo">
+              <label class="demo-label" for="kmSlider">Distance travelled</label>
+              <div class="demo-value"><span id="kmVal">1</span> km</div>
+              <input type="range" id="kmSlider" min="1" max="15" step="0.5" value="1">
+              <div class="demo-label">Fare</div>
+              <div class="demo-value demo-fare" id="fareVal">&#8369;12.00</div>
+              <div class="demo-note" id="ruleUsed">Rule 1 applies: flat fare.</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 6: Jeepney worked examples -->
+        <article class="slide">
+          <div class="card card-teal">
+            <h2>Jeepney fare: worked examples</h2>
+
+            <p><strong>Ride of 3 km.</strong> 3 &le; 4, so rule 1. f(3) = &#8369;12.00.</p>
+            <p><strong>Ride of 4 km.</strong> Rule 1, since &le; includes 4. f(4) = &#8369;12.00.</p>
+            <p><strong>Ride of 5 km.</strong> f(5) = 12 + 1.5(1) = <strong>&#8369;13.50</strong>.</p>
+            <p><strong>Ride of 7 km.</strong> f(7) = 12 + 1.5(3) = 12 + 4.50 = <strong>&#8369;16.50</strong>.</p>
+            <p><strong>Ride of 10 km.</strong> f(10) = 12 + 1.5(6) = 12 + 9.00 = <strong>&#8369;21.00</strong>.</p>
+            <p><strong>Ride of 12 km.</strong> f(12) = 12 + 1.5(8) = 12 + 12.00 = <strong>&#8369;24.00</strong>.</p>
+            <p><strong>Ride of 4.5 km.</strong> f(4.5) = 12 + 1.5(0.5) = 12 + 0.75 = <strong>&#8369;12.75</strong>. Only half a kilometre is extra.</p>
+
+            <h3 class="sub">Working backwards</h3>
+            <p><strong>You paid &#8369;18.00. How far did you ride?</strong></p>
+            <p>
+              &#8369;18 is more than &#8369;12, so the ride must be in rule 2.<br>
+              12 + 1.5(x &minus; 4) = 18<br>
+              1.5(x &minus; 4) = 6<br>
+              x &minus; 4 = 4<br>
+              x = <strong>8 km</strong>.
+            </p>
+            <p>Check: 12 + 1.5(8 &minus; 4) = 12 + 6 = &#8369;18. Correct.</p>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">The trap to avoid</span>
+              Do not write 1.5x instead of 1.5(x &minus; 4). The first 4 km are
+              already covered by the &#8369;12 base. If you charge 1.5 on all 10 km
+              of a 10 km ride, you are charging twice for the first 4 km.
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 7: Warm-up function g(x) -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>The warm-up function, fully worked</h2>
+            <p>This is the function from your notes. Let us work through it slowly.</p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">g(x) = 3x + 1</span><span class="cond">if x &lt; 0</span></div>
+                <div class="rule-row"><span class="val">g(x) = x&sup2; + 3</span><span class="cond">if x &ge; 0</span></div>
+              </div>
+            </div>
+
+            <h3 class="sub">Negative inputs</h3>
+            <p><strong>g(&minus;1)</strong> = 3(&minus;1) + 1 = <strong>&minus;2</strong>.</p>
+            <p><strong>g(&minus;3)</strong> = 3(&minus;3) + 1 = <strong>&minus;8</strong>.</p>
+            <p><strong>g(&minus;5)</strong> = 3(&minus;5) + 1 = <strong>&minus;14</strong>.</p>
+            <p><strong>g(&minus;0.5)</strong> = 3(&minus;0.5) + 1 = <strong>&minus;0.5</strong>.</p>
+
+            <h3 class="sub">Zero and positive inputs</h3>
+            <p><strong>g(0)</strong> = 0&sup2; + 3 = <strong>3</strong> (the &ge; includes 0).</p>
+            <p><strong>g(1)</strong> = 1 + 3 = <strong>4</strong>.</p>
+            <p><strong>g(3)</strong> = 9 + 3 = <strong>12</strong>.</p>
+            <p><strong>g(5)</strong> = 25 + 3 = <strong>28</strong>.</p>
+            <p><strong>g(10)</strong> = 100 + 3 = <strong>103</strong>.</p>
+            <p><strong>g(0.5)</strong> = 0.25 + 3 = <strong>3.25</strong>.</p>
+
+            <h3 class="sub">Spotting the boundary</h3>
+            <p>
+              At x = 0, rule 1 would give 3(0) + 1 = 1, but rule 1 does not
+              include 0. Rule 2 gives 0 + 3 = 3. So g(0) = 3, and the graph jumps
+              from a value near 1 (just below 0) up to 3 (at 0). This is a common
+              feature of piecewise functions &mdash; the boundary is where the
+              action happens.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 8: Mobile data plan -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>Mobile data plan</h2>
+            <p>
+              A telecom company charges &#8369;300 per month for a plan that
+              includes 5 GB of data. Any data beyond 5 GB costs &#8369;50 per
+              gigabyte.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">D(g) = 300</span><span class="cond">if 0 &le; g &le; 5</span></div>
+                <div class="rule-row"><span class="val">D(g) = 300 + 50(g &minus; 5)</span><span class="cond">if g &gt; 5</span></div>
+              </div>
+            </div>
+
+            <p><strong>3 GB used.</strong> D(3) = <strong>&#8369;300</strong>. Inside the plan, no extra charge.</p>
+            <p><strong>5 GB used.</strong> The &le; includes 5. D(5) = <strong>&#8369;300</strong>.</p>
+            <p><strong>6 GB used.</strong> D(6) = 300 + 50(1) = <strong>&#8369;350</strong>.</p>
+            <p><strong>8 GB used.</strong> D(8) = 300 + 50(3) = <strong>&#8369;450</strong>.</p>
+            <p><strong>10 GB used.</strong> D(10) = 300 + 50(5) = <strong>&#8369;550</strong>.</p>
+            <p><strong>12 GB used.</strong> D(12) = 300 + 50(7) = <strong>&#8369;650</strong>.</p>
+            <p><strong>15 GB used.</strong> D(15) = 300 + 50(10) = <strong>&#8369;800</strong>.</p>
+
+            <p>
+              Notice that D(g) never goes below &#8369;300, no matter how little
+              data you use. That is what it means to be a flat monthly plan.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 9: Pencils -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>Bulk pencil purchase</h2>
+            <p>
+              A bookstore sells pencils at &#8369;10 each. If a customer buys 10
+              or more, every pencil drops to &#8369;8 each.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">C(p) = 10p</span><span class="cond">if 0 &lt; p &lt; 10</span></div>
+                <div class="rule-row"><span class="val">C(p) = 8p</span><span class="cond">if p &ge; 10</span></div>
+              </div>
+            </div>
+
+            <p><strong>3 pencils.</strong> C(3) = <strong>&#8369;30</strong>.</p>
+            <p><strong>5 pencils.</strong> C(5) = <strong>&#8369;50</strong>.</p>
+            <p><strong>8 pencils.</strong> C(8) = <strong>&#8369;80</strong>.</p>
+            <p><strong>9 pencils.</strong> C(9) = <strong>&#8369;90</strong>.</p>
+            <p><strong>10 pencils.</strong> The &ge; includes 10. C(10) = 8 &times; 10 = <strong>&#8369;80</strong>.</p>
+            <p><strong>12 pencils.</strong> C(12) = <strong>&#8369;96</strong>.</p>
+            <p><strong>15 pencils.</strong> C(15) = <strong>&#8369;120</strong>.</p>
+            <p><strong>20 pencils.</strong> C(20) = <strong>&#8369;160</strong>.</p>
+
+            <div class="callout callout-amber">
+              <span class="callout-label">The surprising result</span>
+              Nine pencils cost &#8369;90. Ten pencils cost &#8369;80. Buying one
+              more pencil saves you &#8369;10. This is a real thing that happens
+              with bulk pricing.
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 10: Hourly wage -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>Hourly wage with overtime</h2>
+            <p>
+              An employee earns &#8369;80 per hour for up to 40 hours a week. Any
+              time beyond 40 hours is paid at 1.5 times the regular rate, which
+              is &#8369;120 per hour.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">W(h) = 80h</span><span class="cond">if 0 &le; h &le; 40</span></div>
+                <div class="rule-row"><span class="val">W(h) = 3200 + 120(h &minus; 40)</span><span class="cond">if h &gt; 40</span></div>
+              </div>
+            </div>
+
+            <p>
+              Where did the 3200 come from? It is the pay for the first 40 hours:
+              80 &times; 40 = &#8369;3,200. That flat amount is baked into the
+              second rule.
+            </p>
+
+            <p><strong>20 hours.</strong> W(20) = 80 &times; 20 = <strong>&#8369;1,600</strong>.</p>
+            <p><strong>35 hours.</strong> W(35) = <strong>&#8369;2,800</strong>.</p>
+            <p><strong>40 hours.</strong> W(40) = <strong>&#8369;3,200</strong>.</p>
+            <p><strong>41 hours.</strong> W(41) = 3200 + 120(1) = <strong>&#8369;3,320</strong>.</p>
+            <p><strong>45 hours.</strong> W(45) = 3200 + 120(5) = <strong>&#8369;3,800</strong>.</p>
+            <p><strong>50 hours.</strong> W(50) = 3200 + 120(10) = <strong>&#8369;4,400</strong>.</p>
+
+            <h3 class="sub">Working backwards</h3>
+            <p><strong>A worker earned &#8369;4,400. How many hours did they work?</strong></p>
+            <p>
+              3200 + 120(h &minus; 40) = 4400<br>
+              120(h &minus; 40) = 1200<br>
+              h &minus; 40 = 10<br>
+              h = <strong>50 hours</strong>.
+            </p>
+
+            <div class="callout callout-amber">
+              <span class="callout-label">Trap to avoid</span>
+              Do not compute 80 &times; 41 = &#8369;3,280 for a 41-hour week. The
+              41st hour is overtime and must be paid at &#8369;120.
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 11: Parking + ceiling -->
+        <article class="slide">
+          <div class="card card-pink">
+            <h2>Parking rates and the ceiling function</h2>
+            <p>
+              A parking garage charges &#8369;40 for the first 2 hours, then
+              &#8369;20 for each extra hour or fraction of an hour. That phrase
+              &ldquo;or fraction&rdquo; is what brings the ceiling function in.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">P(t) = 40</span><span class="cond">if 0 &lt; t &le; 2</span></div>
+                <div class="rule-row"><span class="val">P(t) = 40 + 20&#8968;t &minus; 2&#8969;</span><span class="cond">if t &gt; 2</span></div>
+              </div>
+            </div>
+
+            <p><strong>2 hours.</strong> P(2) = <strong>&#8369;40</strong>.</p>
+            <p><strong>2.5 hours.</strong> &#8968;0.5&#8969; = 1. P(2.5) = <strong>&#8369;60</strong>.</p>
+            <p><strong>3 hours.</strong> P(3) = <strong>&#8369;60</strong>.</p>
+            <p><strong>3.5 hours.</strong> &#8968;1.5&#8969; = 2. P(3.5) = <strong>&#8369;80</strong>.</p>
+            <p><strong>4.5 hours.</strong> &#8968;2.5&#8969; = 3. P(4.5) = <strong>&#8369;100</strong>.</p>
+            <p><strong>6 hours.</strong> &#8968;4&#8969; = 4. P(6) = <strong>&#8369;120</strong>.</p>
+            <p><strong>8 hours.</strong> &#8968;6&#8969; = 6. P(8) = <strong>&#8369;160</strong>.</p>
+
+            <h3 class="sub">Ceiling and floor, side by side</h3>
+            <p>&#8968;3.5&#8969; = 4 &nbsp;&middot;&nbsp; &#8968;2.1&#8969; = 3 &nbsp;&middot;&nbsp; &#8968;2.01&#8969; = 3 &nbsp;&middot;&nbsp; &#8968;7&#8969; = 7</p>
+            <p>&#8970;3.9&#8971; = 3 &nbsp;&middot;&nbsp; &#8970;4.99&#8971; = 4 &nbsp;&middot;&nbsp; &#8970;6&#8971; = 6</p>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">Why parking uses ceiling</span>
+              If you park for two hours and ten minutes, you have entered a third
+              hour, even if only briefly. The garage rounds that sliver up to a
+              full hour. The ceiling function always rounds up.
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 12: Water bill -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>The water bill, worked in full</h2>
+            <p>
+              This one has four tiers. Each tier has a flat amount plus a
+              per-cubic-metre charge for anything beyond the tier's starting
+              point.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">W(x) = 200</span><span class="cond">if 0 &lt; x &le; 10</span></div>
+                <div class="rule-row"><span class="val">W(x) = 200 + 30(x &minus; 10)</span><span class="cond">if 10 &lt; x &le; 20</span></div>
+                <div class="rule-row"><span class="val">W(x) = 500 + 40(x &minus; 20)</span><span class="cond">if 20 &lt; x &le; 30</span></div>
+                <div class="rule-row"><span class="val">W(x) = 900 + 35(x &minus; 30)</span><span class="cond">if x &gt; 30</span></div>
+              </div>
+            </div>
+
+            <p><strong>5 m&sup3;.</strong> W(5) = <strong>&#8369;200</strong>.</p>
+            <p><strong>10 m&sup3;.</strong> W(10) = <strong>&#8369;200</strong>.</p>
+            <p><strong>12 m&sup3;.</strong> W(12) = 200 + 30(2) = <strong>&#8369;260</strong>.</p>
+            <p><strong>15 m&sup3;.</strong> W(15) = <strong>&#8369;350</strong>.</p>
+            <p><strong>20 m&sup3;.</strong> W(20) = 200 + 30(10) = <strong>&#8369;500</strong>.</p>
+            <p><strong>24 m&sup3;.</strong> W(24) = 500 + 40(4) = <strong>&#8369;660</strong>.</p>
+            <p><strong>30 m&sup3;.</strong> W(30) = 500 + 40(10) = <strong>&#8369;900</strong>.</p>
+            <p><strong>34 m&sup3;.</strong> W(34) = 900 + 35(4) = <strong>&#8369;1,040</strong>.</p>
+
+            <h3 class="sub">The challenge: working backwards</h3>
+            <p><strong>A household received a bill of &#8369;1,040. How much water did they use?</strong></p>
+            <p>
+              900 + 35(x &minus; 30) = 1040<br>
+              35(x &minus; 30) = 140<br>
+              x &minus; 30 = 4<br>
+              x = <strong>34 m&sup3;</strong>.
+            </p>
+
+            <h3 class="sub">The environmental tax</h3>
+            <p>
+              Tax applies only to consumption strictly above 30 m&sup3;. For 34 m&sup3;:<br>
+              Amount above: 4 m&sup3;. Charge on that portion: 35 &times; 4 = &#8369;140.<br>
+              Tax at 15%: 0.15 &times; 140 = <strong>&#8369;21</strong>.<br>
+              Total payable: 1040 + 21 = <strong>&#8369;1,061</strong>.
+            </p>
+
+            <div class="callout callout-amber">
+              <span class="callout-label">Trap to avoid</span>
+              Do not take 15% of the whole &#8369;1,040 bill. That gives
+              &#8369;156, which is far too high. The rule restricts the tax to
+              consumption inside the highest bracket only.
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="deck-controls">
+        <button class="deck-btn" id="prevSlide" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&larr;</span> Previous
+        </button>
+        <button class="deck-btn primary" id="nextSlide" type="button" aria-label="Next slide">
+          Next <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- QUIZ -->
+  <section class="panel" id="quiz" role="tabpanel">
+
+    <div id="quizArea">
+      <div class="quiz-toolbar">
+        <div class="quiz-meta">
+          <div class="pill pill-violet">Question <span id="qNum">1</span> of 50</div>
+          <div class="pill pill-amber">Streak <span id="streak">0</span></div>
+          <div class="pill pill-teal">Score <span id="score">0</span></div>
+        </div>
+        <button class="shuffle-btn" id="shuffleBtn" type="button">
+          <span class="shuffle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </span>
+          Shuffle questions
+        </button>
+      </div>
+
+      <div class="progress"><div class="progress-fill" id="barFill"></div></div>
+
+      <div class="q-card" id="questionCard">
+        <div class="q-tag" id="qTag">Warm-Up</div>
+        <div class="q-text" id="qText"></div>
+        <div class="options" id="options"></div>
+        <div class="explain" id="explain">
+          <div class="explain-head" id="explainHead"></div>
+          <div class="explain-body" id="explainBody"></div>
+        </div>
+        <div class="next-wrap" id="nextWrap">
+          <button class="btn" id="nextBtn">Next question</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultArea" hidden></div>
+
+  </section>
+
+  <!--Formula Sheet-->
+  <section class="panel" id="cheat" role="tabpanel">
+    <article class="card card-violet">
+      <h2>Formula sheet</h2>
+      <p>All six contexts from the activity sheet, plus the rounding rules.</p>
+    </article>
+    <div id="cheatSheet"></div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="panel" id="glossary" role="tabpanel">
+    <article class="card card-teal">
+      <h2>English &mdash; Filipino Glossary</h2>
+      <p>
+        Key terms used in this reviewer, with their Filipino translations.
+      </p>
+    </article>
+    <div id="glossaryList"></div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="panel" id="videos" role="tabpanel">
+    <article class="card card-pink">
+      <h2>Video Lessons</h2>
+      <p>
+        The first group is in English, the second group is in Filipino.
+      </p>
+    </article>
+    <div id="videoList"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Week 1 math reviewer built from the M.A.T.H. Quest learning activity sheet on piecewise functions.</p>
+  </div>
+</footer>
+
+<button class="sound-toggle" id="muteBtn" aria-label="Toggle sound">Sound: on</button>
+
+</body>
+</html>
