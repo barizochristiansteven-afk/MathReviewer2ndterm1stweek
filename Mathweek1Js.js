@@ -133,7 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* QUIZ DATA — 50 questions (43 scenario-based + 7 concept) */
+  /* ============================================================
+     QUIZ DATA — 50 questions (43 scenario-based + 7 concept)
+     ============================================================ */
   const questions = [
     /* ---- JEEPNEY FARE ---- */
     {
@@ -647,12 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tag: "Concept",
       question:
         "If a condition says x ≥ 0, is x = 0 included?",
-      options: [
-        "Yes",
-        "No",
-        "Only sometimes",
-        "Only when x is positive"
-      ],
+      options: ["Yes", "No", "Only sometimes", "Only when x is positive"],
       answer: 0,
       explanation:
         "Yes. ≥ means greater than OR equal to, so zero is included."
@@ -852,47 +849,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Formula sheet */
   const cheatSheet = document.getElementById("cheatSheet");
   const formulas = [
-    {
-      title: "Jeepney Fare",
-      formula: "f(x) = 12, if 0 < x ≤ 4\nf(x) = 12 + 1.5(x − 4), if x > 4",
-      note: "₱12 covers the first 4 km. Every kilometre beyond 4 costs ₱1.50."
-    },
-    {
-      title: "Mobile Data Plan",
-      formula: "D(g) = 300, if 0 ≤ g ≤ 5\nD(g) = 300 + 50(g − 5), if g > 5",
-      note: "The plan costs ₱300 for up to 5 GB. Extra data costs ₱50 per GB."
-    },
-    {
-      title: "Bulk Pencil Purchase",
-      formula: "C(p) = 10p, if 0 < p < 10\nC(p) = 8p, if p ≥ 10",
-      note: "Fewer than 10 pencils cost ₱10 each. Ten or more cost ₱8 each."
-    },
-    {
-      title: "Overtime Wage",
-      formula: "W(h) = 80h, if 0 ≤ h ≤ 40\nW(h) = 3200 + 120(h − 40), if h > 40",
-      note: "Regular pay is ₱80/hour. Overtime is ₱120/hour after 40 hours."
-    },
-    {
-      title: "Parking",
-      formula: "P(t) = 40, if 0 < t ≤ 2\nP(t) = 40 + 20⌈t − 2⌉, if t > 2",
-      note: "The first 2 hours cost ₱40. Each additional hour or fraction costs ₱20."
-    },
-    {
-      title: "Water Bill",
-      formula:
-        "W(x) = 200, if 0 < x ≤ 10\nW(x) = 200 + 30(x − 10), if 10 < x ≤ 20\nW(x) = 500 + 40(x − 20), if 20 < x ≤ 30\nW(x) = 900 + 35(x − 30), if x > 30",
-      note: "The bill increases according to the consumption tier."
-    },
-    {
-      title: "Ceiling Function",
-      formula: "⌈3.5⌉ = 4\n⌈2.1⌉ = 3\n⌈2.01⌉ = 3",
-      note: "The ceiling function rounds a number UP to the nearest integer."
-    },
-    {
-      title: "Floor Function",
-      formula: "⌊3.9⌋ = 3\n⌊4.99⌋ = 4\n⌊6⌋ = 6",
-      note: "The floor function rounds a number DOWN to the nearest integer."
-    }
+    { title: "Jeepney Fare", formula: "f(x) = 12, if 0 < x ≤ 4\nf(x) = 12 + 1.5(x − 4), if x > 4", note: "₱12 covers the first 4 km. Every kilometre beyond 4 costs ₱1.50." },
+    { title: "Mobile Data Plan", formula: "D(g) = 300, if 0 ≤ g ≤ 5\nD(g) = 300 + 50(g − 5), if g > 5", note: "The plan costs ₱300 for up to 5 GB. Extra data costs ₱50 per GB." },
+    { title: "Bulk Pencil Purchase", formula: "C(p) = 10p, if 0 < p < 10\nC(p) = 8p, if p ≥ 10", note: "Fewer than 10 pencils cost ₱10 each. Ten or more cost ₱8 each." },
+    { title: "Overtime Wage", formula: "W(h) = 80h, if 0 ≤ h ≤ 40\nW(h) = 3200 + 120(h − 40), if h > 40", note: "Regular pay is ₱80/hour. Overtime is ₱120/hour after 40 hours." },
+    { title: "Parking", formula: "P(t) = 40, if 0 < t ≤ 2\nP(t) = 40 + 20⌈t − 2⌉, if t > 2", note: "The first 2 hours cost ₱40. Each additional hour or fraction costs ₱20." },
+    { title: "Water Bill", formula: "W(x) = 200, if 0 < x ≤ 10\nW(x) = 200 + 30(x − 10), if 10 < x ≤ 20\nW(x) = 500 + 40(x − 20), if 20 < x ≤ 30\nW(x) = 900 + 35(x − 30), if x > 30", note: "The bill increases according to the consumption tier." },
+    { title: "Ceiling Function", formula: "⌈3.5⌉ = 4\n⌈2.1⌉ = 3\n⌈2.01⌉ = 3", note: "The ceiling function rounds a number UP to the nearest integer." },
+    { title: "Floor Function", formula: "⌊3.9⌋ = 3\n⌊4.99⌋ = 4\n⌊6⌋ = 6", note: "The floor function rounds a number DOWN to the nearest integer." }
   ];
 
   formulas.forEach(item => {
@@ -1028,7 +992,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function animateConfetti() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     let active = false;
-    const colors = ["#7c3aed", "#ec4899", "#14b8a6", "#f59e0b", "#3b82f6", "#10b981"];
+    const colors = ["#2563eb", "#0ea5e9", "#4f46e5", "#06b6d4", "#1e3a8a", "#334155"];
 
     confettiPieces.forEach(piece => {
       piece.y += piece.speedY;
