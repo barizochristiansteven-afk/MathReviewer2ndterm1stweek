@@ -12,15 +12,17 @@
 </head>
 <body>
 
+<!-- Background video (drop background.mp4 next to the HTML) -->
+<video class="bg-video" autoplay muted loop playsinline preload="auto">
+  <source src="background.mp4" type="video/mp4">
+</video>
+<div class="bg-video-overlay" aria-hidden="true"></div>
+
 <div class="reading-progress" aria-hidden="true">
   <div class="reading-progress-fill" id="readingProgress"></div>
 </div>
 
 <canvas id="confetti" aria-hidden="true"></canvas>
-
-<div class="blob blob-1" aria-hidden="true"></div>
-<div class="blob blob-2" aria-hidden="true"></div>
-<div class="blob blob-3" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="wrap">
@@ -42,7 +44,6 @@
 
   <!-- STUDY NOTES -->
   <section class="panel is-active" id="learn" role="tabpanel">
-
     <div class="deck">
       <div class="deck-progress">
         <span class="deck-counter">Slide <span id="slideNum">1</span> of <span id="slideTotal">12</span></span>
@@ -51,21 +52,17 @@
 
       <div class="deck-stage" id="deckStage">
 
-        <!-- Slide 1 -->
         <article class="slide">
           <div class="card intro-letter">
             <div class="letter-stamp">Week 1</div>
             <h2 class="letter-title">A short note before we begin</h2>
-
             <p class="letter-greeting">Dear student,</p>
-
             <p>
               Welcome to Week 1 of General Mathematics. This is the week where you
               meet one of the most quietly useful ideas in all of mathematics &mdash;
               the <strong>piecewise function</strong>. It has a long name, but the
               idea behind it is something you have already lived your whole life.
             </p>
-
             <p>
               Think about the last time you rode a jeepney. You did not pay a random
               amount. You paid a flat fare for the first few kilometres, and then a
@@ -74,13 +71,11 @@
               short rides, one for longer rides. Whichever rule matched your trip,
               that was the price.
             </p>
-
             <p>
               That is a piecewise function. It is one function, but it carries more
               than one rule. The rule you use depends on the number you were given.
               Nothing more, nothing less.
             </p>
-
             <p>
               You will see the same idea everywhere once you start looking. Your
               phone plan charges one rate for the first five gigabytes, and a higher
@@ -90,7 +85,6 @@
               income tax is built from brackets &mdash; a chain of piecewise rules
               stacked on top of each other.
             </p>
-
             <p>
               Take your time. Read the examples slowly. Drag the slider. Test
               yourself with the fifty questions and read the explanation after each
@@ -99,12 +93,10 @@
               like a lens &mdash; a way of seeing the pricing rules that were always
               quietly running in the background of your everyday life.
             </p>
-
             <p class="letter-sign">Let us begin.<br>&mdash; Your Week 1 reviewer</p>
           </div>
         </article>
 
-        <!-- Slide 2 -->
         <article class="slide">
           <div class="card card-violet">
             <h2>What this week covers</h2>
@@ -123,7 +115,6 @@
           </div>
         </article>
 
-        <!-- Slide 3 -->
         <article class="slide">
           <div class="card card-violet">
             <h2>What a piecewise function actually is</h2>
@@ -148,7 +139,6 @@
           </div>
         </article>
 
-        <!-- Slide 4 -->
         <article class="slide">
           <div class="card card-amber">
             <h2>The method that always works</h2>
@@ -181,7 +171,6 @@
           </div>
         </article>
 
-        <!-- Slide 5 -->
         <article class="slide">
           <div class="card card-teal">
             <h2>Try it: the jeepney fare</h2>
@@ -209,11 +198,9 @@
           </div>
         </article>
 
-        <!-- Slide 6 -->
         <article class="slide">
           <div class="card card-teal">
             <h2>Jeepney fare: worked examples</h2>
-
             <p><strong>Ride of 3 km.</strong> 3 &le; 4, so rule 1. f(3) = &#8369;12.00.</p>
             <p><strong>Ride of 4 km.</strong> Rule 1, since &le; includes 4. f(4) = &#8369;12.00.</p>
             <p><strong>Ride of 5 km.</strong> f(5) = 12 + 1.5(1) = <strong>&#8369;13.50</strong>.</p>
@@ -242,7 +229,6 @@
           </div>
         </article>
 
-        <!-- Slide 7 -->
         <article class="slide">
           <div class="card card-blue">
             <h2>The warm-up function, fully worked</h2>
@@ -281,7 +267,6 @@
           </div>
         </article>
 
-        <!-- Slide 8 -->
         <article class="slide">
           <div class="card card-blue">
             <h2>Mobile data plan</h2>
@@ -314,7 +299,6 @@
           </div>
         </article>
 
-        <!-- Slide 9 -->
         <article class="slide">
           <div class="card card-amber">
             <h2>Bulk pencil purchase</h2>
@@ -349,7 +333,6 @@
           </div>
         </article>
 
-        <!-- Slide 10 -->
         <article class="slide">
           <div class="card card-emerald">
             <h2>Hourly wage with overtime</h2>
@@ -397,7 +380,6 @@
           </div>
         </article>
 
-        <!-- Slide 11 -->
         <article class="slide">
           <div class="card card-pink">
             <h2>Parking rates and the ceiling function</h2>
@@ -436,7 +418,6 @@
           </div>
         </article>
 
-        <!-- Slide 12 -->
         <article class="slide">
           <div class="card card-emerald">
             <h2>The water bill, worked in full</h2>
@@ -493,7 +474,6 @@
 
       </div>
 
-      <!-- Navigation buttons centered close together -->
       <div class="deck-controls">
         <button class="deck-btn" id="prevSlide" type="button" aria-label="Previous slide">
           <span aria-hidden="true">&larr;</span> Previous
@@ -503,12 +483,10 @@
         </button>
       </div>
     </div>
-
   </section>
 
   <!-- QUIZ -->
   <section class="panel" id="quiz" role="tabpanel">
-
     <div id="quizArea">
       <div class="quiz-toolbar">
         <div class="quiz-meta">
@@ -545,9 +523,7 @@
         </div>
       </div>
     </div>
-
     <div id="resultArea" hidden></div>
-
   </section>
 
   <!-- FORMULA SHEET -->
@@ -563,9 +539,7 @@
   <section class="panel" id="glossary" role="tabpanel">
     <article class="card card-teal">
       <h2>English &mdash; Filipino Glossary</h2>
-      <p>
-        Key terms used in this reviewer, with their Filipino translations.
-      </p>
+      <p>Key terms used in this reviewer, with their Filipino translations.</p>
     </article>
     <div id="glossaryList"></div>
   </section>
@@ -574,9 +548,7 @@
   <section class="panel" id="videos" role="tabpanel">
     <article class="card card-pink">
       <h2>Video Lessons</h2>
-      <p>
-        The first group is in English, the second group is in Filipino.
-      </p>
+      <p>The first group is in English, the second group is in Filipino.</p>
     </article>
     <div id="videoList"></div>
   </section>
