@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tab.classList.add("is-active");
       const targetPanel = document.getElementById(target);
       if (targetPanel) targetPanel.classList.add("is-active");
+      if (target === "learn") requestAnimationFrame(updateDeckHeight);
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deckDots = document.getElementById("deckDots");
   const prevSlide = document.getElementById("prevSlide");
   const nextSlide = document.getElementById("nextSlide");
+  const deckStage = document.getElementById("deckStage");
 
   let currentSlide = 0;
   slideTotal.textContent = slides.length;
@@ -56,6 +58,15 @@ document.addEventListener("DOMContentLoaded", () => {
       dot.addEventListener("click", () => showSlide(index));
       deckDots.appendChild(dot);
     });
+  }
+
+  // Match stage height to active slide (prevents big gap below short slides)
+  function updateDeckHeight() {
+    if (!deckStage) return;
+    const activeSlide = slides[currentSlide];
+    if (!activeSlide) return;
+    const h = activeSlide.offsetHeight;
+    if (h > 0) deckStage.style.height = h + "px";
   }
 
   function showSlide(index) {
@@ -78,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
     prevSlide.disabled = currentSlide === 0;
     nextSlide.disabled = currentSlide === slides.length - 1;
 
+    requestAnimationFrame(updateDeckHeight);
+
     window.scrollTo({
       top: document.querySelector(".deck").offsetTop - 20,
       behavior: "smooth"
@@ -95,8 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  window.addEventListener("resize", updateDeckHeight);
+
   createSlideDots();
   showSlide(0);
+  window.addEventListener("load", updateDeckHeight);
+  updateDeckHeight();
 
 
   /* Jeepney fare slider */
@@ -133,11 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ============================================================
-     QUIZ DATA — 50 questions (43 scenario-based + 7 concept)
-     ============================================================ */
+  /* ============ QUIZ DATA — 50 questions ============ */
   const questions = [
-    /* ---- JEEPNEY FARE ---- */
+    /* Jeepney fare */
     {
       tag: "Jeepney Fare",
       question:
@@ -207,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Only 0.5 km is beyond the 4-km boundary.\nCharge on that part = 1.5 × 0.5 = ₱0.75.\nTotal fare = 12.00 + 0.75 = ₱12.75."
     },
 
-    /* ---- BULK PRICING ---- */
+    /* Bulk pricing */
     {
       tag: "Bulk Pricing",
       question:
@@ -277,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Buying 10 pencils for ₱80 is cheaper, but it gives only 10 pencils — not enough.\nTo actually have at least 12 pencils, the customer must buy 12:\nC(12) = 8 × 12 = ₱96.\nThe rule is about how many you buy, not how many you need."
     },
 
-    /* ---- MOBILE DATA PLAN ---- */
+    /* Data plan */
     {
       tag: "Data Plan",
       question:
@@ -352,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "The first piece gives a flat ₱300 for any usage from 0 to 5 GB, so even a subscriber who uses almost nothing pays ₱300.\nThe ₱50 rate applies only to data above 5 GB."
     },
 
-    /* ---- OVERTIME PAY ---- */
+    /* Overtime */
     {
       tag: "Overtime Pay",
       question:
@@ -413,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Regular pay for the first 40 hours = 80 × 40 = ₱3,200.\nThe 5 extra hours are overtime at ₱120 each = ₱600.\nTotal = 3200 + 120(5) = 3200 + 600 = ₱3,800.\nMultiplying all 45 hours by ₱80 underpays the overtime."
     },
 
-    /* ---- WATER BILL ---- */
+    /* Water bill */
     {
       tag: "Water Bill",
       question:
@@ -478,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "The condition 10 < x ≤ 20 includes 20, so the second tier applies.\nW(20) = 200 + 30(10) = 200 + 300 = ₱500.\nThis is also the flat amount built into the third tier, so the bill does not jump at 20 m³."
     },
 
-    /* ---- PARKING ---- */
+    /* Parking */
     {
       tag: "Parking",
       question:
@@ -516,7 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "t − 2 = 3.1, and ⌈3.1⌉ = 4.\nThe garage rounds the 0.1-hour sliver up to a full hour.\nP(5.1) = 40 + 20(4) = 40 + 80 = ₱120."
     },
 
-    /* ---- WARM-UP FUNCTION g(x) ---- */
+    /* Warm-up g(x) */
     {
       tag: "Warm-Up",
       question:
@@ -568,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "The boundary x = 0 belongs to the second piece (x ≥ 0), so g(0) = 0² + 3 = 3.\nJust below 0 the first piece gives values approaching 3(0) + 1 = 1.\nBecause 1 ≠ 3, the graph jumps at x = 0 — a classic feature of piecewise functions."
     },
 
-    /* ---- CONCEPT (7 questions) ---- */
+    /* Concept */
     {
       tag: "Concept",
       question: "What is a piecewise function?",
@@ -592,8 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       tag: "Concept",
-      question:
-        "What should you do FIRST when solving a piecewise function?",
+      question: "What should you do FIRST when solving a piecewise function?",
       options: [
         "Add all the rules",
         "Choose the easiest rule",
@@ -606,8 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       tag: "Concept",
-      question:
-        "Why should you check the condition before calculating?",
+      question: "Why should you check the condition before calculating?",
       options: [
         "Because only one rule applies to the given input",
         "Because multiplication is difficult",
@@ -633,8 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       tag: "Concept",
-      question:
-        "What determines which piece of a piecewise function you use?",
+      question: "What determines which piece of a piecewise function you use?",
       options: [
         "The color of the formula",
         "The input and its condition",
@@ -647,8 +659,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       tag: "Concept",
-      question:
-        "If a condition says x ≥ 0, is x = 0 included?",
+      question: "If a condition says x ≥ 0, is x = 0 included?",
       options: ["Yes", "No", "Only sometimes", "Only when x is positive"],
       answer: 0,
       explanation:
