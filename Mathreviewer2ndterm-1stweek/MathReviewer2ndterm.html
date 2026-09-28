@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Reviewer — Piecewise Functions & Statistics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Mathweek1Css.css">
+<script src="Mathweek1Js.js" defer></script>
+</head>
+<body>
+<video class="bg-video" autoplay muted loop playsinline preload="auto">
+  <source src="background.mp4" type="video/mp4">
+</video>
+<div class="bg-video-overlay" aria-hidden="true"></div>
+
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-fill" id="readingProgress"></div>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="eyebrow">General Mathematics &middot; Quarter 1 &middot; Weeks 1 &amp; 2</div>
+    <h1>Math Reviewer</h1>
+    <p class="tagline">Piecewise Functions &amp; Statistical Data.</p>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab is-active" data-tab="week1" role="tab">Week 1 &middot; Piecewise</button>
+      <button class="tab" data-tab="week2" role="tab">Week 2 &middot; Statistics</button>
+      <button class="tab" data-tab="quiz" role="tab">Practice Quiz</button>
+      <button class="tab" data-tab="cheat" role="tab">Formula Sheet</button>
+      <button class="tab" data-tab="glossary" role="tab">Glossary</button>
+      <button class="tab" data-tab="ppt" role="tab">Live PPT</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ WEEK 1 · PIECEWISE ============ -->
+  <section class="panel is-active" id="week1" role="tabpanel">
+    <div class="deck" data-deck="week1">
+      <div class="deck-progress">
+        <span class="deck-counter">Slide <span class="slide-num">1</span> of <span class="slide-total">12</span></span>
+        <div class="deck-dots"></div>
+      </div>
+
+      <div class="deck-stage">
+
+        <!-- SLIDE 1 · INTRO -->
+        <article class="slide">
+          <div class="card intro-letter">
+            <div class="letter-stamp">Week 1</div>
+            <h2 class="letter-title">A short note before we begin</h2>
+            <p class="letter-greeting">Dear student,</p>
+            <p>
+              Welcome to Week 1 of General Mathematics. This week you will meet the
+              <strong>piecewise function</strong>. The name sounds long, but the idea
+              behind it is something you already know from real life.
+            </p>
+            <p>
+              Imagine you ride a jeepney. If you only travel a short distance, you pay
+              a flat minimum fare. But if you travel farther, the driver adds a little
+              more for every extra kilometre. Two rules. One price.
+            </p>
+            <p>
+              A piecewise function works the same way. It is <strong>one function</strong>
+              that carries <strong>more than one rule</strong>. You look at the number
+              you were given, you check which rule matches, and you use that rule only.
+            </p>
+            <p>
+              Once you understand this, you will start noticing it everywhere: phone
+              plans, water bills, parking fees, overtime pay, and even income tax.
+            </p>
+            <p class="letter-sign">Let us begin.<br>&mdash; Your Week 1 reviewer</p>
+          </div>
+        </article>
+
+        <!-- SLIDE 2 · WHAT YOU WILL LEARN -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>What you will learn this week</h2>
+            <p>By the end of Week 1, you will be able to do three things:</p>
+            <ol class="steps">
+              <li>
+                <strong>Write a piecewise function</strong> from a real-life story
+                — like a jeepney fare, a print shop price, or a parking fee.
+              </li>
+              <li>
+                <strong>Solve piecewise problems</strong> by picking the right rule
+                and doing the math carefully.
+              </li>
+              <li>
+                <strong>Explain why one rule is not enough</strong> for the real
+                world. Some prices stay flat, then change after a certain point.
+              </li>
+            </ol>
+            <div class="callout callout-violet">
+              <span class="callout-label">How to use this reviewer</span>
+              Tap <strong>Next</strong> to move forward, tap <strong>Previous</strong>
+              to go back. On a phone, you can also swipe left or right.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 3 · WHAT IS A PIECEWISE FUNCTION -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>What is a piecewise function?</h2>
+            <p>
+              Think of a piecewise function as a <strong>rule book</strong> with more
+              than one rule. When someone gives you a number, you flip open the rule
+              book, find the rule that matches that number, and follow only that one.
+            </p>
+            <div class="callout callout-violet">
+              <span class="callout-label">Real-life picture</span>
+              A jeepney driver follows two rules.
+              <br><strong>Rule 1:</strong> If you ride 5 km or less, pay ₱13.
+              <br><strong>Rule 2:</strong> If you ride more than 5 km, pay ₱13 plus
+              ₱1 for every extra kilometre.
+            </div>
+            <p>
+              Two rules. One fare. That is what makes it <em>piecewise</em>.
+            </p>
+            <p>
+              Why does the real world use this? Because most prices do not stay the
+              same forever. Water, electricity, parking, and phone plans all change
+              their rate once you go past a certain amount.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 4 · THE 3-STEP METHOD -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>The three steps that always work</h2>
+            <p>Every piecewise problem follows the same three simple steps.</p>
+            <ol class="steps">
+              <li><strong>Read the number</strong> they gave you. That is your input.</li>
+              <li><strong>Check each rule</strong> one by one. Which "if" statement is true for your number?</li>
+              <li><strong>Use only that rule.</strong> Do the math carefully. Do not mix two rules together.</li>
+            </ol>
+            <div class="callout callout-amber">
+              <span class="callout-label">Watch out!</span>
+              Do not use the rule that looks easiest. Do not use two rules at once.
+              The "if" part decides everything.
+            </div>
+
+            <h3 class="sub">A small warm-up</h3>
+            <p>Imagine a function that says:</p>
+            <div class="formula formula-plain">
+              <div class="rule-row"><span class="val">p(x) = 5</span><span class="cond">if x &lt; 10</span></div>
+              <div class="rule-row"><span class="val">p(x) = 5 + 2(x &minus; 10)</span><span class="cond">if x &ge; 10</span></div>
+            </div>
+            <p><strong>p(3):</strong> 3 is smaller than 10, so use rule 1. p(3) = 5.</p>
+            <p><strong>p(10):</strong> The symbol &ge; includes 10, so use rule 2. p(10) = 5 + 2(0) = 5.</p>
+            <p><strong>p(13):</strong> 13 is 10 or more, so use rule 2. p(13) = 5 + 2(3) = 11.</p>
+            <p>
+              Notice: p(10) gives the same answer under both rules. That is on purpose.
+              The two pieces were designed to meet at the boundary.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 5 · JEEPNEY SLIDER -->
+        <article class="slide">
+          <div class="card card-teal">
+            <h2>Try it: the jeepney fare</h2>
+            <p>
+              Move the slider with your finger or mouse. Watch what happens to the fare
+              when the distance goes past 5 km.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">f(x) = 13</span><span class="cond">if 0 &lt; x &le; 5</span></div>
+                <div class="rule-row"><span class="val">f(x) = x + 8</span><span class="cond">if x &gt; 5</span></div>
+              </div>
+            </div>
+
+            <div class="demo">
+              <label class="demo-label" for="kmSlider">Distance travelled</label>
+              <div class="demo-value"><span id="kmVal">1</span> km</div>
+              <input type="range" id="kmSlider" min="1" max="15" step="0.5" value="1">
+              <div class="demo-label">Fare</div>
+              <div class="demo-value demo-fare" id="fareVal">&#8369;13.00</div>
+              <div class="demo-note" id="ruleUsed">Rule 1 applies: flat fare.</div>
+            </div>
+            <p>
+              For the first 5 km, the price stays at ₱13. The moment you pass 5 km,
+              the price starts to climb by ₱1 per kilometre.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 6 · JEEPNEY EXAMPLES -->
+        <article class="slide">
+          <div class="card card-teal">
+            <h2>Jeepney fare: worked examples</h2>
+            <p>Let us walk through seven different rides, one by one.</p>
+            <p><strong>Ride of 3 km.</strong> 3 is 5 or less, so rule 1 applies. f(3) = <strong>₱13.00</strong>.</p>
+            <p><strong>Ride of 5 km.</strong> The symbol &le; includes 5, so rule 1 still applies. f(5) = <strong>₱13.00</strong>.</p>
+            <p><strong>Ride of 6 km.</strong> 6 is more than 5, so rule 2 applies. f(6) = 6 + 8 = <strong>₱14.00</strong>.</p>
+            <p><strong>Ride of 7 km.</strong> f(7) = 7 + 8 = <strong>₱15.00</strong>.</p>
+            <p><strong>Ride of 10 km.</strong> f(10) = 10 + 8 = <strong>₱18.00</strong>.</p>
+            <p><strong>Ride of 12 km.</strong> f(12) = 12 + 8 = <strong>₱20.00</strong>.</p>
+
+            <h3 class="sub">Working backwards</h3>
+            <p><strong>What if someone paid ₱20? How far did they ride?</strong></p>
+            <p>
+              ₱20 is more than ₱13, so the ride must be in rule 2.<br>
+              x + 8 = 20<br>
+              x = 20 &minus; 8<br>
+              x = <strong>12 km</strong>.
+            </p>
+            <p>Check: f(12) = 12 + 8 = ₱20. Correct.</p>
+          </div>
+        </article>
+
+        <!-- SLIDE 7 · WARM-UP FUNCTION -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>The warm-up function, slowly worked out</h2>
+            <p>Here is a function with two rules:</p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">f(x) = 2x + 1</span><span class="cond">if x &lt; 0</span></div>
+                <div class="rule-row"><span class="val">f(x) = x&sup2; + 3</span><span class="cond">if x &ge; 0</span></div>
+              </div>
+            </div>
+
+            <h3 class="sub">When the number is negative</h3>
+            <p><strong>f(&minus;1):</strong> &minus;1 is less than 0, so use 2x + 1. f(&minus;1) = 2(&minus;1) + 1 = &minus;2 + 1 = <strong>&minus;1</strong>.</p>
+            <p><strong>f(&minus;3):</strong> f(&minus;3) = 2(&minus;3) + 1 = &minus;6 + 1 = <strong>&minus;5</strong>.</p>
+            <p><strong>f(&minus;5):</strong> f(&minus;5) = 2(&minus;5) + 1 = &minus;10 + 1 = <strong>&minus;9</strong>.</p>
+
+            <h3 class="sub">When the number is zero or positive</h3>
+            <p><strong>f(0):</strong> The &ge; sign includes 0, so use x&sup2; + 3. f(0) = 0 + 3 = <strong>3</strong>.</p>
+            <p><strong>f(2):</strong> f(2) = 2&sup2; + 3 = 4 + 3 = <strong>7</strong>.</p>
+            <p><strong>f(3):</strong> f(3) = 9 + 3 = <strong>12</strong>.</p>
+            <p><strong>f(5):</strong> f(5) = 25 + 3 = <strong>28</strong>.</p>
+
+            <div class="callout callout-violet">
+              <span class="callout-label">A nice surprise</span>
+              When x is small and negative, the answer is a small negative number.
+              When x is 0 or bigger, the answer jumps up. That jump is normal — the
+              two rules do not have to meet.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 8 · PRINT SHOP -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>Print shop bulk buy</h2>
+            <p>
+              A print shop charges ₱5 for every page, but only up to 50 pages.
+              Once you go past 50 pages, the first 50 pages cost a flat ₱250 and
+              each extra page costs only ₱3.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">C(p) = 5p</span><span class="cond">if 0 &lt; p &le; 50</span></div>
+                <div class="rule-row"><span class="val">C(p) = 250 + 3(p &minus; 50)</span><span class="cond">if p &gt; 50</span></div>
+              </div>
+            </div>
+
+            <p><strong>25 pages:</strong> 25 is 50 or less, so use rule 1. C(25) = 5 × 25 = <strong>₱125</strong>.</p>
+            <p><strong>50 pages:</strong> The &le; includes 50, so rule 1 still applies. C(50) = 5 × 50 = <strong>₱250</strong>.</p>
+            <p><strong>60 pages:</strong> 60 is more than 50, so use rule 2. C(60) = 250 + 3(10) = 250 + 30 = <strong>₱280</strong>.</p>
+            <p><strong>100 pages:</strong> C(100) = 250 + 3(50) = 250 + 150 = <strong>₱400</strong>.</p>
+
+            <div class="callout callout-violet">
+              <span class="callout-label">Why the rule changes</span>
+              The shop wants to reward you for printing a lot. That is why the price
+              per page drops from ₱5 to ₱3 after 50 pages.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 9 · INTERNET PLAN -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>Internet plan at home</h2>
+            <p>
+              A home internet plan costs ₱999 every month. It includes up to 100 GB
+              of data. If you go past 100 GB, every extra GB costs ₱10.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">C(g) = 999</span><span class="cond">if 0 &le; g &le; 100</span></div>
+                <div class="rule-row"><span class="val">C(g) = 999 + 10(g &minus; 100)</span><span class="cond">if g &gt; 100</span></div>
+              </div>
+            </div>
+
+            <p><strong>75 GB used:</strong> 75 is 100 or less, so rule 1 applies. C(75) = <strong>₱999</strong>.</p>
+            <p><strong>100 GB used:</strong> The &le; includes 100, so rule 1 still applies. C(100) = <strong>₱999</strong>.</p>
+            <p><strong>130 GB used:</strong> 130 is more than 100, so use rule 2. C(130) = 999 + 10(30) = <strong>₱1,299</strong>.</p>
+            <p><strong>150 GB used:</strong> C(150) = 999 + 10(50) = <strong>₱1,499</strong>.</p>
+
+            <div class="callout callout-amber">
+              <span class="callout-label">A common trap</span>
+              Do not take 15% of the whole bill. That would give the wrong answer.
+              Only the portion above 100 GB is charged the extra ₱10.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 10 · MALL PARKING -->
+        <article class="slide">
+          <div class="card card-pink">
+            <h2>Mall parking fee</h2>
+            <p>
+              The mall charges ₱40 for the first 2 hours. After that, every extra
+              hour <em>or part of an hour</em> costs ₱15.
+            </p>
+            <p>The words "or part of an hour" mean we use the ceiling function.</p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">P(h) = 40</span><span class="cond">if 0 &lt; h &le; 2</span></div>
+                <div class="rule-row"><span class="val">P(h) = 40 + 15&#8968;h &minus; 2&#8969;</span><span class="cond">if h &gt; 2</span></div>
+              </div>
+            </div>
+
+            <p><strong>1.5 hours:</strong> 1.5 is 2 or less, so rule 1. P(1.5) = <strong>₱40</strong>.</p>
+            <p><strong>2 hours:</strong> The &le; includes 2, so rule 1. P(2) = <strong>₱40</strong>.</p>
+            <p><strong>3.5 hours:</strong> Use rule 2. &#8968;3.5 &minus; 2&#8969; = &#8968;1.5&#8969; = 2. P(3.5) = 40 + 15(2) = <strong>₱70</strong>.</p>
+            <p><strong>5 hours:</strong> &#8968;5 &minus; 2&#8969; = &#8968;3&#8969; = 3. P(5) = 40 + 15(3) = <strong>₱85</strong>.</p>
+
+            <h3 class="sub">Ceiling and floor, side by side</h3>
+            <p>&#8968;3.5&#8969; = 4 &nbsp;&middot;&nbsp; &#8968;2.1&#8969; = 3 &nbsp;&middot;&nbsp; &#8968;7&#8969; = 7</p>
+            <p>&#8970;3.9&#8971; = 3 &nbsp;&middot;&nbsp; &#8970;4.99&#8971; = 4 &nbsp;&middot;&nbsp; &#8970;6&#8971; = 6</p>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">Why parking uses ceiling</span>
+              If you park for 2 hours and 10 minutes, you have stepped into a third
+              hour. The garage rounds that small extra bit UP to a full hour. That
+              is what the ceiling function does.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 11 · WATER BILL -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>The water bill, worked in full</h2>
+            <p>
+              This one has four tiers. Each tier has a flat base plus a charge
+              for every extra cubic metre.
+            </p>
+
+            <div class="formula">
+              <span class="brace">{</span>
+              <div class="formula-body">
+                <div class="rule-row"><span class="val">W(x) = 200</span><span class="cond">if 0 &lt; x &le; 10</span></div>
+                <div class="rule-row"><span class="val">W(x) = 200 + 30(x &minus; 10)</span><span class="cond">if 10 &lt; x &le; 20</span></div>
+                <div class="rule-row"><span class="val">W(x) = 500 + 40(x &minus; 20)</span><span class="cond">if 20 &lt; x &le; 30</span></div>
+                <div class="rule-row"><span class="val">W(x) = 900 + 35(x &minus; 30)</span><span class="cond">if x &gt; 30</span></div>
+              </div>
+            </div>
+
+            <p><strong>5 m&sup3;:</strong> 5 is 10 or less, so rule 1. W(5) = <strong>₱200</strong>.</p>
+            <p><strong>15 m&sup3;:</strong> Rule 2. W(15) = 200 + 30(5) = <strong>₱350</strong>.</p>
+            <p><strong>24 m&sup3;:</strong> Rule 3. W(24) = 500 + 40(4) = <strong>₱660</strong>.</p>
+            <p><strong>30 m&sup3;:</strong> Rule 3 (the &le; includes 30). W(30) = 500 + 40(10) = <strong>₱900</strong>.</p>
+            <p><strong>34 m&sup3;:</strong> Rule 4. W(34) = 900 + 35(4) = <strong>₱1,040</strong>.</p>
+
+            <h3 class="sub">Environmental tax</h3>
+            <p>
+              A 15% tax is charged only on the portion above 30 m&sup3;. For 34 m&sup3;:<br>
+              Portion above 30: 4 m&sup3;.<br>
+              Charge for that portion: 35 × 4 = ₱140.<br>
+              Tax: 0.15 × 140 = <strong>₱21</strong>.<br>
+              Total payable: 1,040 + 21 = <strong>₱1,061</strong>.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 12 · SUMMARY -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>What you should remember from Week 1</h2>
+            <p>Three big ideas to carry with you:</p>
+            <ol class="steps">
+              <li>
+                A piecewise function is <strong>one function with more than one rule</strong>.
+                Each rule covers a certain range of input values.
+              </li>
+              <li>
+                To use it, follow three steps: <strong>read the number, check the rules,
+                use the one that matches</strong>. Never mix two rules.
+              </li>
+              <li>
+                Real-world prices change at thresholds — after 5 km, after 50 pages,
+                after 100 GB, after 2 hours, and after 10 cubic metres. Piecewise
+                functions describe those changes exactly.
+              </li>
+            </ol>
+            <div class="callout callout-violet">
+              <span class="callout-label">Next step</span>
+              Move on to Week 2 to learn how to make sense of data with statistics.
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="deck-controls">
+        <button class="deck-btn deck-prev" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&larr;</span> Previous
+        </button>
+        <button class="deck-btn primary deck-next" type="button" aria-label="Next slide">
+          Next <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEEK 2 · STATISTICS ============ -->
+  <section class="panel" id="week2" role="tabpanel">
+    <div class="deck" data-deck="week2">
+      <div class="deck-progress">
+        <span class="deck-counter">Slide <span class="slide-num">1</span> of <span class="slide-total">14</span></span>
+        <div class="deck-dots"></div>
+      </div>
+
+      <div class="deck-stage">
+
+        <!-- SLIDE 1 · INTRO -->
+        <article class="slide">
+          <div class="card intro-letter">
+            <div class="letter-stamp">Week 2</div>
+            <h2 class="letter-title">From rules to reasoning</h2>
+            <p class="letter-greeting">Dear student,</p>
+            <p>
+              Last week you learned how a single function can carry more than one rule.
+              This week we move into <strong>statistics</strong> — the branch of math
+              that helps us make sense of data.
+            </p>
+            <p>
+              Data is everywhere. The barangay health center collects it when they run
+              a check-up. Your school collects it when they compare section scores.
+              A sari-sari store owner collects it when they track daily earnings.
+            </p>
+            <p>
+              The question is not whether we have data. The question is: how do we
+              describe it honestly?
+            </p>
+            <p>
+              This week you will learn three things. First, how to tell
+              <strong>qualitative data</strong> from <strong>quantitative data</strong>.
+              Second, how to sort data into the four levels of measurement. Third, how
+              to pick the right measure of centre and spread for any situation.
+            </p>
+            <p class="letter-sign">Let us begin.<br>&mdash; Your Week 2 reviewer</p>
+          </div>
+        </article>
+
+        <!-- SLIDE 2 · WHAT YOU WILL LEARN -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>What you will learn this week</h2>
+            <p>By the end of Week 2, you will be able to do three things:</p>
+            <ol class="steps">
+              <li>
+                <strong>Tell data types apart</strong> — decide whether a piece of
+                data is qualitative or quantitative, and whether it is discrete or
+                continuous.
+              </li>
+              <li>
+                <strong>Sort data into four levels</strong> — nominal, ordinal,
+                interval, and ratio.
+              </li>
+              <li>
+                <strong>Choose the right summary</strong> — mean, median, or mode
+                for the centre, and range or standard deviation for the spread.
+              </li>
+            </ol>
+            <div class="callout callout-violet">
+              <span class="callout-label">Why this matters</span>
+              When you describe data honestly, you help people make better decisions
+              — a fairer loan program, a better nutrition plan, a smarter school policy.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 3 · TWO FAMILIES OF DATA -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>Two families of data</h2>
+            <p>
+              Think of data as living in one of two big families. Knowing which family
+              it belongs to tells you what you can and cannot do with it.
+            </p>
+
+            <div class="callout callout-violet">
+              <span class="callout-label">Family 1: Qualitative (or categorical)</span>
+              These are words, not numbers. They describe <strong>what kind</strong>
+              something is. You cannot add them or average them.
+              <br>Examples: blood type, favourite colour, gender, strand, barangay name.
+            </div>
+
+            <div class="callout callout-teal">
+              <span class="callout-label">Family 2: Quantitative (or numerical)</span>
+              These are numbers. They describe <strong>how many</strong> or
+              <strong>how much</strong>. You can add, subtract, and average them.
+              <br>Examples: age, height, monthly income, number of siblings.
+            </div>
+
+            <p>
+              A quick test: try adding two values together. If the answer makes sense,
+              the data is quantitative. If the answer is nonsense, it is qualitative.
+              (Adding "blue" and "red" gives nothing useful. Adding 3 siblings and 4
+              siblings gives 7 siblings.)
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 4 · DISCRETE VS CONTINUOUS -->
+        <article class="slide">
+          <div class="card card-teal">
+            <h2>Discrete vs continuous numbers</h2>
+            <p>
+              Inside the quantitative family, numbers come in two flavours.
+            </p>
+
+            <div class="callout callout-violet">
+              <span class="callout-label">Discrete numbers</span>
+              You <strong>count</strong> these. They come in whole pieces. You cannot
+              have half of one.
+              <br>Examples: number of siblings (you can have 2, 3, or 4 — never 3.7),
+              number of pets, number of books, number of school clubs.
+            </div>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">Continuous numbers</span>
+              You <strong>measure</strong> these. They can take any value within a range,
+              even tiny fractions.
+              <br>Examples: height (158.4 cm or 158.42 cm), temperature (31.2°C),
+              distance (3.2 km), study time (3.5 hours).
+            </div>
+
+            <p>
+              A quick test: between any two values, can you always find another value?
+              If yes, the data is continuous. There are always more temperatures between
+              30°C and 31°C. But there is no "number of siblings" between 3 and 4.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 5 · NOIR -->
+        <article class="slide">
+          <div class="card card-violet">
+            <h2>The NOIR framework</h2>
+            <p>
+              Data is also grouped by how carefully it is measured. There are four
+              levels. They spell the word <strong>NOIR</strong>.
+            </p>
+
+            <ol class="steps">
+              <li>
+                <strong>N — Nominal.</strong> Just names or labels. No order.
+                <br>Example: blood type A, B, AB, O.
+              </li>
+              <li>
+                <strong>O — Ordinal.</strong> Labels with a natural order.
+                <br>Example: class rank 1st, 2nd, 3rd.
+              </li>
+              <li>
+                <strong>I — Interval.</strong> Numbers with equal spacing, but no true
+                zero.
+                <br>Example: temperature in Celsius.
+              </li>
+              <li>
+                <strong>R — Ratio.</strong> Numbers with equal spacing and a true zero.
+                <br>Example: height, monthly income.
+              </li>
+            </ol>
+
+            <p>
+              The higher the level, the more math you can do. Only ratio data lets you
+              say "twice as much." Only interval and ratio let you use the mean. Ordinal
+              allows the median. Nominal only allows the mode.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 6 · NOMINAL -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>Nominal data (N in NOIR)</h2>
+            <p>
+              Nominal data is like a <strong>name tag</strong>. It tells you which
+              group something belongs to. But it does not tell you which group is
+              better or bigger.
+            </p>
+            <div class="callout callout-violet">
+              <span class="callout-label">Everyday examples</span>
+              Blood type (A, B, AB, O), favourite colour, gender, strand (STEM, HUMSS,
+              ABM), barangay name, zip code.
+            </div>
+            <p>
+              <strong>What you can do with it:</strong> count how many fall in each
+              group, and identify the most common one.
+            </p>
+            <p>
+              <strong>What you cannot do:</strong> put the groups in order, average them,
+              or say one is "higher" than another. You cannot say the average blood type
+              is AB. That sentence has no meaning.
+            </p>
+            <p><strong>Only measure of centre that works:</strong> the mode.</p>
+          </div>
+        </article>
+
+        <!-- SLIDE 7 · ORDINAL -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>Ordinal data (O in NOIR)</h2>
+            <p>
+              Ordinal data is like a <strong>podium</strong>. There is a 1st place,
+              a 2nd place, and a 3rd place. You know the order. But you cannot say the
+              gap between 1st and 2nd is the same as the gap between 2nd and 3rd.
+            </p>
+            <div class="callout callout-amber">
+              <span class="callout-label">Everyday examples</span>
+              Class rank (1st, 2nd, 3rd), satisfaction (Very Satisfied, Satisfied,
+              Neutral, Dissatisfied), difficulty (Easy, Medium, Hard), priority
+              (High, Medium, Low), service rating (Excellent, Good, Fair, Poor).
+            </div>
+            <p>
+              <strong>What you can do:</strong> put them in order, and find the middle
+              one.
+            </p>
+            <p>
+              <strong>What you cannot do:</strong> assume that the gaps between
+              categories are equal. The difference between "Very Satisfied" and
+              "Satisfied" is not necessarily the same as between "Neutral" and
+              "Dissatisfied."
+            </p>
+            <p><strong>Best measure of centre:</strong> the median.</p>
+          </div>
+        </article>
+
+        <!-- SLIDE 8 · INTERVAL -->
+        <article class="slide">
+          <div class="card card-blue">
+            <h2>Interval data (I in NOIR)</h2>
+            <p>
+              Interval data is like a <strong>thermometer</strong>. Every degree is the
+              same size. But there is no true zero — 0°C is just the freezing point of
+              water. It does not mean "no temperature at all."
+            </p>
+            <div class="callout callout-violet">
+              <span class="callout-label">Everyday examples</span>
+              Temperature in Celsius or Fahrenheit, calendar years, IQ scores.
+            </div>
+            <p>
+              <strong>What you can do:</strong> add and subtract values, and take the
+              mean.
+            </p>
+            <p>
+              <strong>What you cannot do:</strong> take ratios. You cannot say 40°C is
+              "twice as hot" as 20°C because 0°C does not mean "no heat."
+            </p>
+            <p>
+              <strong>Best measure of centre:</strong> the mean, unless there are
+              extreme outliers. In that case, use the median.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 9 · RATIO -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>Ratio data (R in NOIR)</h2>
+            <p>
+              Ratio data is like a <strong>measuring tape</strong>. It has equal
+              spacing AND a true zero. Zero means none. That is what makes ratios
+              meaningful.
+            </p>
+            <div class="callout callout-teal">
+              <span class="callout-label">Everyday examples</span>
+              Height, weight, monthly income, age, number of siblings, distance from
+              school.
+            </div>
+            <p>
+              <strong>What you can do:</strong> everything. Add, subtract, average,
+              and take ratios. You can say "₱40,000 is twice ₱20,000" because ₱0
+              means no income.
+            </p>
+            <p>
+              <strong>Best measure of centre:</strong> the mean, unless there are
+              extreme outliers. Then use the median.
+            </p>
+            <p>
+              <strong>Variability:</strong> range for a quick look, standard deviation
+              for the full picture.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 10 · CENTRAL TENDENCY -->
+        <article class="slide">
+          <div class="card card-pink">
+            <h2>Centre: mean, median, and mode</h2>
+            <p>
+              The <strong>centre</strong> of a data set is a single number that
+              tries to describe the "typical" value. There are three ways to find it.
+            </p>
+
+            <div class="formula formula-plain">
+              <div class="rule-row"><span class="val">Mean = (sum of values) &divide; how many</span><span class="cond">average</span></div>
+              <div class="rule-row"><span class="val">Median = middle value when sorted</span><span class="cond">not fooled by outliers</span></div>
+              <div class="rule-row"><span class="val">Mode = value that appears most often</span><span class="cond">works for categories</span></div>
+            </div>
+
+            <p>Let us try all three with the same data set: <strong>2, 4, 4, 7, 8</strong>.</p>
+            <p><strong>Mean:</strong> (2 + 4 + 4 + 7 + 8) &divide; 5 = 25 &divide; 5 = <strong>5</strong>.</p>
+            <p><strong>Median:</strong> The data is already in order. The middle one is 4. Median = <strong>4</strong>.</p>
+            <p><strong>Mode:</strong> 4 appears twice. All others appear once. Mode = <strong>4</strong>.</p>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">When to use which</span>
+              Use the mean when there are no extreme values. Use the median when
+              there is a very large or very small outlier. Use the mode when you
+              are dealing with categories.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 11 · VARIABILITY -->
+        <article class="slide">
+          <div class="card card-pink">
+            <h2>Spread: range, variance, and standard deviation</h2>
+            <p>
+              Knowing the centre is not enough. Two classes can have the same average
+              score but feel very different. We need a number for how
+              <strong>spread out</strong> the data is.
+            </p>
+
+            <div class="formula formula-plain">
+              <div class="rule-row"><span class="val">Range = max &minus; min</span><span class="cond">quick, uses only two values</span></div>
+              <div class="rule-row"><span class="val">Variance = average of squared gaps from the mean</span><span class="cond">detailed</span></div>
+              <div class="rule-row"><span class="val">Std Dev = &radic;variance</span><span class="cond">same units as data</span></div>
+            </div>
+
+            <p>Let us use the same data: <strong>2, 4, 4, 7, 8</strong>.</p>
+            <p><strong>Range:</strong> 8 &minus; 2 = <strong>6</strong>.</p>
+            <p><strong>Mean:</strong> 5 (from the last slide).</p>
+            <p><strong>Gaps from the mean:</strong> (2&minus;5)&sup2;=9, (4&minus;5)&sup2;=1, (4&minus;5)&sup2;=1, (7&minus;5)&sup2;=4, (8&minus;5)&sup2;=9. Sum = 24.</p>
+            <p><strong>Variance:</strong> 24 &divide; (5&minus;1) = 24 &divide; 4 = <strong>6</strong>.</p>
+            <p><strong>Standard deviation:</strong> &radic;6 &asymp; <strong>2.45</strong>.</p>
+
+            <div class="callout callout-pink">
+              <span class="callout-label">Which one to use</span>
+              Range is a quick glance. Standard deviation gives the full story
+              because it uses every number, not just the extremes.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 12 · SARISARI EXAMPLE -->
+        <article class="slide">
+          <div class="card card-amber">
+            <h2>Worked example: sari-sari store earnings</h2>
+            <p>
+              Ten sari-sari stores in Barangay Buenavista report their monthly
+              earnings. Here they are, in order:
+            </p>
+            <p>
+              8,000 &middot; 9,000 &middot; 10,000 &middot; 11,000 &middot; 12,000 &middot;
+              12,000 &middot; 13,000 &middot; 14,000 &middot; 15,000 &middot; <strong>46,000</strong>
+            </p>
+
+            <h3 class="sub">Let us compute each one</h3>
+            <p><strong>Mean:</strong> sum = 150,000 &divide; 10 = <strong>₱15,000</strong>.</p>
+            <p><strong>Median:</strong> middle two are 12,000 and 12,000. Average = <strong>₱12,000</strong>.</p>
+            <p><strong>Mode:</strong> 12,000 appears twice. Mode = <strong>₱12,000</strong>.</p>
+            <p><strong>Range:</strong> 46,000 &minus; 8,000 = <strong>₱38,000</strong>.</p>
+            <p><strong>Standard deviation:</strong> about <strong>₱11,447</strong>.</p>
+
+            <h3 class="sub">What does this tell us?</h3>
+            <p>
+              The mean is ₱15,000. The median is ₱12,000. That is a big difference.
+              Why? Because one store earns ₱46,000. That one outlier pulls the mean
+              up, making the average look higher than the typical store actually earns.
+            </p>
+            <p>
+              The median of ₱12,000 is more honest. It tells us what a "regular"
+              sari-sari store earns.
+            </p>
+            <p>
+              The huge standard deviation of ₱11,447 tells us the earnings are very
+              spread out. The stores do <em>not</em> have the same earning power. A
+              loan program that assumes they do would be unfair to the smaller stores.
+            </p>
+          </div>
+        </article>
+
+        <!-- SLIDE 13 · CHOOSING THE RIGHT MEASURE -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>Choosing the right summary</h2>
+            <p>Match the measure to the type of data you have.</p>
+
+            <div class="formula formula-plain">
+              <div class="rule-row"><span class="val">Nominal</span><span class="cond">Mode only</span></div>
+              <div class="rule-row"><span class="val">Ordinal</span><span class="cond">Median (mode as backup)</span></div>
+              <div class="rule-row"><span class="val">Interval</span><span class="cond">Mean, or median if outliers</span></div>
+              <div class="rule-row"><span class="val">Ratio</span><span class="cond">Mean, or median if outliers</span></div>
+            </div>
+
+            <p>For spread, use the range as a quick estimate, and standard deviation when you want the full picture.</p>
+
+            <div class="callout callout-violet">
+              <span class="callout-label">The outlier rule</span>
+              If one value is very different from all the others, the mean gets
+              pulled toward it. Use the median instead, and mention the outlier
+              in your write-up.
+            </div>
+          </div>
+        </article>
+
+        <!-- SLIDE 14 · SUMMARY -->
+        <article class="slide">
+          <div class="card card-emerald">
+            <h2>What you should remember from Week 2</h2>
+            <p>Three big ideas to carry with you:</p>
+            <ol class="steps">
+              <li>
+                Data comes in two families: <strong>qualitative</strong> (words,
+                categories) and <strong>quantitative</strong> (numbers). Inside
+                the number family, values can be <strong>discrete</strong> (counted)
+                or <strong>continuous</strong> (measured).
+              </li>
+              <li>
+                The four levels of measurement are <strong>nominal, ordinal, interval,
+                and ratio</strong>. Each level allows different kinds of math.
+              </li>
+              <li>
+                Use the <strong>mean</strong> for typical values when there are no
+                outliers. Use the <strong>median</strong> when there is an outlier.
+                Use the <strong>mode</strong> for categories. Use the
+                <strong>standard deviation</strong> to describe spread.
+              </li>
+            </ol>
+            <div class="callout callout-violet">
+              <span class="callout-label">Final thought</span>
+              Good statistics is honest statistics. When you report the right
+              measure for the right data, you help people make better choices.
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="deck-controls">
+        <button class="deck-btn deck-prev" type="button" aria-label="Previous slide">
+          <span aria-hidden="true">&larr;</span> Previous
+        </button>
+        <button class="deck-btn primary deck-next" type="button" aria-label="Next slide">
+          Next <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="panel" id="quiz" role="tabpanel">
+    <div id="quizArea">
+      <div class="quiz-toolbar">
+        <div class="quiz-meta">
+          <div class="pill pill-violet">Question <span id="qNum">1</span> of <span id="qTotal">75</span></div>
+          <div class="pill pill-amber">Streak <span id="streak">0</span></div>
+          <div class="pill pill-teal">Score <span id="score">0</span></div>
+        </div>
+        <button class="shuffle-btn" id="shuffleBtn" type="button">
+          <span class="shuffle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </span>
+          Shuffle questions
+        </button>
+      </div>
+
+      <div class="progress"><div class="progress-fill" id="barFill"></div></div>
+
+      <div class="q-card" id="questionCard">
+        <div class="q-tag" id="qTag">Warm-Up</div>
+        <div class="q-text" id="qText"></div>
+        <div class="options" id="options"></div>
+        <div class="explain" id="explain">
+          <div class="explain-head" id="explainHead"></div>
+          <div class="explain-body" id="explainBody"></div>
+        </div>
+        <div class="next-wrap" id="nextWrap">
+          <button class="btn" id="nextBtn">Next question</button>
+        </div>
+      </div>
+    </div>
+    <div id="resultArea" hidden></div>
+  </section>
+
+  <!-- ============ FORMULA SHEET ============ -->
+  <section class="panel" id="cheat" role="tabpanel">
+    <article class="card card-violet">
+      <h2>Formula sheet</h2>
+      <p>Every formula, with several worked examples. Each one shows the exact steps.</p>
+    </article>
+    <div id="cheatSheet"></div>
+  </section>
+
+  <!-- ============ GLOSSARY ============ -->
+  <section class="panel" id="glossary" role="tabpanel">
+    <article class="card card-teal">
+      <h2>English &mdash; Filipino Glossary</h2>
+      <p>Key terms used across both weeks, with their Filipino translations.</p>
+    </article>
+    <div id="glossaryList"></div>
+  </section>
+
+  <!-- ============ LIVE PPT ============ -->
+  <section class="panel" id="ppt" role="tabpanel">
+    <article class="card card-pink">
+      <h2>Live Presentation</h2>
+      <p>
+        The lesson deck is embedded below. Use the buttons to switch between
+        Week 1 and Week 2.
+      </p>
+      <div class="ppt-switch" id="pptSwitch"></div>
+    </article>
+    <div class="ppt-frame-wrap">
+      <iframe
+        id="pptFrame"
+        class="ppt-frame"
+        src=""
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Live lesson presentation">
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>General Mathematics reviewer &mdash; Week 1 (Piecewise Functions) &amp; Week 2 (Statistical Data).</p>
+  </div>
+</footer>
+
+<button class="sound-toggle" id="muteBtn" aria-label="Toggle sound">Sound: on</button>
+
+</body>
+</html>
